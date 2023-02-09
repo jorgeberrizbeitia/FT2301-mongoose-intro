@@ -2,8 +2,15 @@ const mongoose = require("mongoose")
 
 // crear nuestro Schema
 const studentSchema = new mongoose.Schema({
-  name: String,
-  candy: Number,
+  name: {
+    type: String,
+    required: true, // esta propiedad es obligatoria
+    unique: true // este valor es unico, no puede estar repetido en otros documentos
+  },
+  candy: {
+    type: Number,
+    default: 1 // si esta propiedad no es agregada, entonces agregala con valor 1.
+  },
   likesPokemon: Boolean
 })
 

@@ -16,7 +16,6 @@ mongoose.connect("mongodb://localhost:27017/patata-db") // retorna una promesa
   // agregar un nuevo documento a la BD
   return StudentModel.create({
     name: "Mario",
-    candy: 20,
     likesPokemon: true
   })
 
