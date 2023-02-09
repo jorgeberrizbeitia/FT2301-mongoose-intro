@@ -9,9 +9,17 @@ const studentSchema = new mongoose.Schema({
   },
   candy: {
     type: Number,
-    default: 1 // si esta propiedad no es agregada, entonces agregala con valor 1.
+    default: 1, // si esta propiedad no es agregada, entonces agregala con valor 1.
+    // enum: [1, 5, 10, 15]
   },
-  likesPokemon: Boolean
+  likesPokemon: Boolean,
+  pizzaToppings: [
+    {
+      type: String,
+      enum: ["piña", "jamon", "peperoni", "tomate", "aceitunas"]
+      // enum define los posibles valores que puede tener esta propiedad
+    }
+  ]
 })
 
 // crear nuestro modelo => siempre con PascalCasing

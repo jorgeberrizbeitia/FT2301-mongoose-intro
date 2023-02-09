@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Dani",
+    "candy": 25,
+    "likesPokemon": true,
+    "pizzaToppings": [
+      "tomate",
+      "jamon"
+    ]
+  },
+  {
+    "name": "Patricio",
+    "candy": 15,
+    "likesPokemon": false,
+    "pizzaToppings": [
+      "piña",
+      "jamon",
+      "tomate"
+    ]
+  },
+  {
+    "name": "Cristina",
+    "candy": 21,
+    "likesPokemon": true,
+    "pizzaToppings": [
+      "piña"
+    ]
+  },
+  {
+    "name": "Araceli",
+    "candy": 21,
+    "likesPokemon": false,
+    "pizzaToppings": [
+      "piña",
+      "aceitunas"
+    ]
+  }
+]
+
