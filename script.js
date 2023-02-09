@@ -28,13 +28,30 @@ mongoose.connect("mongodb://localhost:27017/patata-db") // retorna una promesa
   // return StudentModel.insertMany(allStudents)
 
   // R => READ
-  return StudentModel.find() // trae todos los documentos de esta colección
+  // return StudentModel.find(  ) // trae TODOS los documentos de esta colección
 
+  // return StudentModel.find({candy: {$gte: 20}})
+  // return StudentModel.find({$or: [{likesPokemon: true}, {pizzaToppings: {$in: ["jamon"]}}]})
+
+  return StudentModel.find()
+  .select({name: 1, candy: 1}) // funciona como el project de mongo compass
+  .sort({candy: 1})
+  .skip(1) // salta el primer elemento
+  .limit(2) // solo devuelve los primeros 2 resultados que consigas
 
 })
 .then((response) => {
   console.log(response)
   console.log("respuesta correcta")
+
+
+  // otros metodos de Find
+  // return StudentModel.findOne({likesPokemon: true}) // busca el primer elemento que consigas con la condicion
+  return StudentModel.findById("63e506e36af0f21e5179132c") // busca el elemento que concuerde con el id
+
+})
+.then((response) => {
+  console.log(response)
 })
 .catch((error) => {
   console.log("todo mal", error)
