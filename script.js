@@ -52,6 +52,26 @@ mongoose.connect("mongodb://localhost:27017/patata-db") // retorna una promesa
 })
 .then((response) => {
   console.log(response)
+
+  // UPDATE
+  return StudentModel.findOneAndUpdate({ name: "Mario" }, { candy: 17 }, {new: true})
+  // 1. la busque que hacemos. Cual es el doc que queremos modificar.
+  // 2. cual es la modificacion que queremos hacer
+  // 3. {new: true} para pedir la info actualizada
+
+})
+.then((response) => {
+  console.log("documento actualizado", response)
+  // los metodos de update dan la informacion desactualizada de forma predetermina
+  // podemos forzar a que nos de la info despues de actualizarla. => {new: true}
+
+  // D => DELETE
+  return StudentModel.findOneAndDelete({name: "Patricio"})
+  // 1. cual es el doc que queremos borrar
+
+})
+.then((response) => {
+  console.log("elemento borrado")
 })
 .catch((error) => {
   console.log("todo mal", error)
